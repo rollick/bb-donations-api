@@ -41,10 +41,7 @@ A single Order object with all its details
 
     + Body
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
-
-### Remove an Order [DELETE]
-+ Response 204
+            { "id": 2, "total_amount": 50, "user_id": 1 }
 
 
 # Group Donation
@@ -55,19 +52,19 @@ Donation related resources of the **Donations API**
 + Response 200 (application/json)
 
         [{
-          "id": 1, "title": "Jogging in park"
+          "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1
         }, {
-          "id": 2, "title": "Pick-up posters from post-office"
+          "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
         }]
 
 ### Create a Donation [POST]
 + Request (application/json)
 
-        { "title": "Buy cheese and bread for breakfast." }
+        { "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1 }
 
 + Response 201 (application/json)
 
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+        { "id": 3, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1 }
 
 ## Donation [/donations/{id}]
 A single Donation object with all its details
@@ -84,7 +81,7 @@ A single Donation object with all its details
 
     + Body
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
+            { "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1 }
 
 ### Remove a Donation [DELETE]
 + Response 204
