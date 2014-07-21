@@ -123,7 +123,7 @@ A single Payment object with all its details
 
     + Body
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
+            { "id": 2, "payment_method_id": 1, "order_id": 2, "status": "pending" }
 
 ### Remove a Payment [DELETE]
 + Response 204
@@ -136,7 +136,7 @@ Payment Method related resources of the **Donations API**
 + Response 200 (application/json)
 
         [{
-          "id": 1, "title": "Jogging in park"
+          "id": 1, "provider_id": 1, "payment_type": "credit_card", "payment_process": "popup"
         }, {
-          "id": 2, "title": "Pick-up posters from post-office"
+          "id": 2, "provider_id": 2, "payment_type": "paypal", "payment_process": "redirect"
         }]
