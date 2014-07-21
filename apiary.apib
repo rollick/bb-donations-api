@@ -1,0 +1,91 @@
+FORMAT: 1A
+HOST: https://donations.onepercentclub.com
+
+# Donations
+Donations API describes the endpoints for creating and processing donation payments for Bluebottle.
+
+# Group Orders
+Orders related resources of the **Donations API**
+
+## Orders Collection [/orders]
+### List all orders [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "Jogging in park"
+        }, {
+          "id": 2, "title": "Pick-up posters from post-office"
+        }]
+
+### Create an Order [POST]
++ Request (application/json)
+
+        { "title": "Buy cheese and bread for breakfast." }
+
++ Response 201 (application/json)
+
+        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+
+## Order [/orders/{id}]
+A single Order object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Order to perform action with. Has example value.
+
+### Retrieve an Order [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "title": "Pick-up posters from post-office" }
+
+### Remove an Order [DELETE]
++ Response 204
+
+
+# Group Donations
+Donations related resources of the **Donations API**
+
+## Donations Collection [/donations]
+### List all Donations [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "Jogging in park"
+        }, {
+          "id": 2, "title": "Pick-up posters from post-office"
+        }]
+
+### Create a Donation [POST]
++ Request (application/json)
+
+        { "title": "Buy cheese and bread for breakfast." }
+
++ Response 201 (application/json)
+
+        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+
+## Donation [/donations/{id}]
+A single Donation object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Donation to perform action with. Has example value.
+
+### Retrieve a Donation [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "title": "Pick-up posters from post-office" }
+
+### Remove a Donation [DELETE]
++ Response 204
+
